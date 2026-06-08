@@ -7,7 +7,6 @@ todos = []
 class TodoItem(BaseModel):
     id: int
     title: str
-    description: str
     completed: bool
     
 @app.post("/todos")
