@@ -19,3 +19,9 @@ def create_todo_item(todo: TodoItem):
 def get_todo_items():
     return {"todos": todos}
 
+@app.get("/todos/{todo_id}")
+def get_todo_item(todo_id: int):
+    for todo in todos:
+        if todo.id == todo_id:
+            return {"todo": todo}
+    return {"message": "Todo item not found"}
