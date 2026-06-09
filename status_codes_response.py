@@ -9,3 +9,14 @@ def create_user(user: dict):
         "message": "User created successfully",
         "user": user
     }
+    
+@app.get("/users/")
+def get_users():
+    return {
+        "status": "success",
+        "message": "Users retrieved successfully",
+        "data": [
+            {"id": 1, "name": "Alice"},
+            {"id": 2, "name": "Bob"}
+        ]
+    }
